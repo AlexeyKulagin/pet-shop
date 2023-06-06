@@ -16,16 +16,16 @@ public abstract class BaseTest {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public WebDriver getDriver() {
+    protected WebDriver getDriver() {
         if (driver == null) {
             driver = new ChromeDriver();
         }
         return driver;
     }
 
-    public WebDriverWait getWait(long seconds) {
+    protected WebDriverWait getWait() {
         if (wait == null) {
-            wait = new WebDriverWait(getDriver(), Duration.ofSeconds(seconds));
+            wait = new WebDriverWait(getDriver(), Duration.ofSeconds(3));
         }
         return wait;
     }
@@ -33,9 +33,9 @@ public abstract class BaseTest {
     @BeforeMethod
     public void login() {
         getDriver().get("https://petstore.octoperf.com");
-        getWait(2).until(ExpectedConditions.elementToBeClickable(By.tagName("a"))).click();
-        getWait(2).until(ExpectedConditions.elementToBeClickable(By.linkText("Sign In"))).click();
-        getWait(2).until(ExpectedConditions.elementToBeClickable(By.name("username")))
+        getWait().until(ExpectedConditions.elementToBeClickable(By.tagName("a"))).click();
+        getWait().until(ExpectedConditions.elementToBeClickable(By.linkText("Sign In"))).click();
+        getWait().until(ExpectedConditions.elementToBeClickable(By.name("username")))
                 .sendKeys("qa");
         WebElement passwdField = getDriver().findElement(By.xpath("//input[@name='password']"));
         passwdField.clear();
