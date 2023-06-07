@@ -1,0 +1,46 @@
+@startuml
+abstract class BaseTest {
+}
+class PaymentDetailsPage {
+}
+class MakeOrderTest {
+}
+class OrdersPage {
+}
+abstract class HeaderComponent {
+}
+class ManxCatPage {
+}
+class SubmittedOrderPage {
+}
+abstract class BasePage {
+}
+class UtilTest {
+}
+class TailedManxCatPage {
+}
+class HomePage {
+}
+class CartPage {
+}
+class AccountPage {
+}
+class CatsPage {
+}
+class OrderConfirmPage {
+}
+
+
+HeaderComponent <|-- PaymentDetailsPage
+BaseTest <|-- MakeOrderTest
+HeaderComponent <|-- OrdersPage
+BasePage <|-- HeaderComponent
+HeaderComponent <|-- ManxCatPage
+HeaderComponent <|-- SubmittedOrderPage
+HeaderComponent <|-- TailedManxCatPage
+HeaderComponent <|-- HomePage
+HeaderComponent <|-- CartPage
+HeaderComponent <|-- AccountPage
+HeaderComponent <|-- CatsPage
+HeaderComponent <|-- OrderConfirmPage
+@enduml

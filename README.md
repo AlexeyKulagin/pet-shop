@@ -31,14 +31,13 @@
 
 **Steps:**
 
-1. Go to Cats clicking on Cat pic from Home page
+1. Go to Cats page by clicking on Cat pic from Home page
 2. Select ProductID: FL-DSH-01 Manx
 3. Select ItemID: EST-15
 4. Add Item to the card
-5. Confirm Item is available in the stock
+5. Confirm Item is available in the stock: stockStatus = "true"
 6. Proceed to Checkout
-7. Ship to the same address and Continue
-8. Confirm the order
+7. Confirm the order
 
 **Expected Result:**
 
