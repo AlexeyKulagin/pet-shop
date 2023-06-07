@@ -1,12 +1,17 @@
 package pom.base;
 
+import pom.AccountPage;
+import pom.CartPage;
+import pom.HomePage;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pom.AccountPage;
-import pom.CartPage;
 
 public abstract class HeaderComponent extends BasePage {
+
+    @FindBy(xpath = "//a[@href='/actions/Catalog.action']")
+    WebElement logo;
 
     @FindBy(linkText = "My Account")
     WebElement myAccountLink;
@@ -16,6 +21,12 @@ public abstract class HeaderComponent extends BasePage {
 
     protected HeaderComponent(WebDriver driver) {
         super(driver);
+    }
+
+    public HomePage clickLogo(){
+        logo.click();
+
+        return new HomePage(getDriver());
     }
 
     public AccountPage clickMyAccountLink() {

@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public abstract class BasePage {
+abstract class BasePage {
 
     private final WebDriver driver;
     private WebDriverWait wait;
@@ -17,6 +17,7 @@ public abstract class BasePage {
     }
 
     protected WebDriver getDriver() {
+
         return driver;
     }
 
@@ -24,6 +25,7 @@ public abstract class BasePage {
         if (wait == null) {
             wait = new WebDriverWait(getDriver(), Duration.ofSeconds(3));
         }
+
         return wait;
     }
 }
